@@ -9,12 +9,19 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
 import { EmployeeService } from './shared/employees/employee.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DepartementsComponent } from './departements/departements.component';
+import { DepartementComponent } from './departements/departement/departement.component';
+import { DepartementListComponent } from './departements/departement-list/departement-list.component';
+import { DepartementService } from './shared/departements/departement.service';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    DepartementsComponent,
+    DepartementComponent,
+    DepartementListComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService,DepartementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

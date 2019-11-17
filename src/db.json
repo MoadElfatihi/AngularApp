@@ -14,5 +14,13 @@
       "mobile": "+212673459430",
       "id": 2
     }
+  ],
+  "Departements": [
+    {
+      "name": "test",
+      "description": "test",
+      "code": "test",
+      "id": 1
+    }
   ]
 }
