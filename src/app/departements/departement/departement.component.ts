@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartementService } from '../../shared/departements/departement.service';
 import { NgForm } from'@angular/forms';
-import { Departement } from '../../model/departements/departement.model';
+
 @Component({
   selector: 'app-departement',
   templateUrl: './departement.component.html',
@@ -12,10 +12,11 @@ export class DepartementComponent implements OnInit {
   constructor(private service: DepartementService) { }
 
   ngOnInit() {
+    this.reset();
   }
-  resetForm(form ? : NgForm){
-    if(form !=null)
-      form.reset();
+  reset(forms ? : NgForm){
+    if(forms !=null)
+      forms.resetForm();
     this.service.formData = {
       id : null,
       name : null,
@@ -26,6 +27,6 @@ export class DepartementComponent implements OnInit {
   onSubmit(form : NgForm){
     let data = form.value;
     this.service.addDepartement(data);
-    this.resetForm();
+    this.reset();
   }
 }
