@@ -13,6 +13,16 @@ import { DepartementsComponent } from './departements/departements.component';
 import { DepartementComponent } from './departements/departement/departement.component';
 import { DepartementListComponent } from './departements/departement-list/departement-list.component';
 import { DepartementService } from './shared/departements/departement.service';
+import { NavbarComponent } from './navigation/navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  {path:'employee-list',component: EmployeeListComponent },
+  {path:'departements',component: DepartementsComponent },
+  {path:'employees',component: EmployeesComponent }
+  
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +31,16 @@ import { DepartementService } from './shared/departements/departement.service';
     EmployeeListComponent,
     DepartementsComponent,
     DepartementComponent,
-    DepartementListComponent
+    DepartementListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    RouterModule.forRoot(appRoutes,{enableTracing: true})
   ],
   providers: [EmployeeService,DepartementService],
   bootstrap: [AppComponent]
