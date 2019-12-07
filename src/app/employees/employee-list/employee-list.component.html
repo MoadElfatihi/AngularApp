@@ -1,10 +1,12 @@
+<div class="table-content">
 <table class="table table-hover">
   <thead>
-    <th scope="col">id</th>
-    <th scope="col">full Name</th>
-    <th scope="col">position</th>
-    <th scope="col">employee code</th>
-    <th scope="col">mobile</th>
+    <th scope="col">Id</th>
+    <th scope="col">Full Name</th>
+    <th scope="col">Position</th>
+    <th scope="col">Employee code</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Action</th>
   </thead>
   <tbody>
     <tr *ngFor="let emp of employees | async"[id]="emp.id">
@@ -13,6 +15,16 @@
       <td>{{emp.position}}</td>
       <td>{{emp.empCode}}</td>
       <td>{{emp.mobile}}</td>
+      <td>
+        <button class="btn btn-success" (click)="updateEmploye()"> 
+          <mdb-icon far icon="edit"></mdb-icon> 
+        </button>
+        &nbsp;
+        <button class="btn btn-danger" ng-really-message="Are you sure?" ng-really-click="deleteEmploye()"> 
+          <mdb-icon far icon="trash-alt"></mdb-icon>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
+</div>

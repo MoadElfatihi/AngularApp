@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-
+  isCollapsed : boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
 
- 
+  
+  viewAddemploye(){
+    this.isCollapsed = !this.isCollapsed;
+  }
 
 }

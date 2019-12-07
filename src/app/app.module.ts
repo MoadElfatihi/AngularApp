@@ -16,6 +16,7 @@ import { DepartementService } from './shared/departements/departement.service';
 import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes} from '@angular/router';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 const appRoutes: Routes = [
   {path:'employee-list',component: EmployeeListComponent },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     NgbModule,
+    MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes,{enableTracing: true})
   ],
   providers: [EmployeeService,DepartementService],

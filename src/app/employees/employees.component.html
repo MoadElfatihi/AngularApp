@@ -1,14 +1,13 @@
-<div class="col-md-6">
-</div>
-  <div class="col-md-6">
-    <div class="m-4">
-        <div class="row justify-content-center">     
-          <app-employee></app-employee>
-        </div>
+<div class="table-content">
+<app-employee-list></app-employee-list>
+<button (click)="viewAddemploye()"><i class="fas fa-plus"></i> Add employe</button>
+  <div *ngIf="!isCollapsed">
+    <div class="col-md-6">
+      <div class="m-4">
+          <div class="row justify-content-center">     
+            <app-employee></app-employee>
+          </div>
+      </div>
     </div>
 </div>
-
-
-<app-employee-list></app-employee-list>
-
 

@@ -9,10 +9,21 @@ import { Employee } from '../../model/employees/employee.model';
 })
 export class EmployeeListComponent implements OnInit {
   employees : Employee[];
-  constructor(private service : EmployeeService) { }
+  mySubscription : any;
+  constructor(private service : EmployeeService) { 
+  }
 
   ngOnInit() {
+    this.service.refreshNeeded$.subscribe(() => {
+      this.getEmployee();
+    });
+    this.getEmployee();
+  }
+  getEmployee(){
     this.employees = this.service.getEmployee();
+  }
+  deleteEmploye(){
+    
   }
 
 }
