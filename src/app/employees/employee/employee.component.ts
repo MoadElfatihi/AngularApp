@@ -31,4 +31,7 @@ export class EmployeeComponent implements OnInit {
     this.service.addEmployee(data);
     this.reset(form);
   }
+  deleteEmploye(id){
+   this.service.deleteEmployee(id);
+  }
 }

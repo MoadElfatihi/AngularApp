@@ -17,6 +17,7 @@ import { NavbarComponent } from './navigation/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes} from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 const appRoutes: Routes = [
   {path:'employee-list',component: EmployeeListComponent },
@@ -42,7 +43,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgbModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(appRoutes,{enableTracing: true})
+    RouterModule.forRoot(appRoutes,{enableTracing: true}),
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType : 'danger'
+    })
   ],
   providers: [EmployeeService,DepartementService],
   bootstrap: [AppComponent]

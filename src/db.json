@@ -1,13 +1,6 @@
 {
   "Employees": [
     {
-      "fullName": "Moad ELFATIHI",
-      "position": null,
-      "empCode": "40000",
-      "mobile": "+212673459430",
-      "id": 1
-    },
-    {
       "fullName": "test",
       "position": "test",
       "empCode": "3",
@@ -34,20 +27,6 @@
       "empCode": "fvfv",
       "mobile": "+212673459430",
       "id": 5
-    },
-    {
-      "fullName": "Moad ELFATIHI",
-      "position": "sdcdc",
-      "empCode": "40000",
-      "mobile": "+212673459430",
-      "id": 6
-    },
-    {
-      "fullName": "test",
-      "position": "test",
-      "empCode": "tetst",
-      "mobile": "test",
-      "id": 7
     }
   ],
   "Departements": [

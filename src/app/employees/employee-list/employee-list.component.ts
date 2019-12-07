@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../shared/employees/employee.service';
 import { Employee } from '../../model/employees/employee.model';
-
+import { EmployeeComponent } from '../employee/employee.component';
 @Component({
+  providers: [EmployeeComponent],
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
@@ -10,7 +11,13 @@ import { Employee } from '../../model/employees/employee.model';
 export class EmployeeListComponent implements OnInit {
   employees : Employee[];
   mySubscription : any;
-  constructor(private service : EmployeeService) { 
+
+  public popoverTitle: string ="delete employe";
+  public popoverMessage: string = "Do you want to delete this Employe ?";
+  public confirmClicked: boolean;
+  public cancelClicked: boolean;
+
+  constructor(private service : EmployeeService, private employeeComp : EmployeeComponent) { 
   }
 
   ngOnInit() {
@@ -22,8 +29,8 @@ export class EmployeeListComponent implements OnInit {
   getEmployee(){
     this.employees = this.service.getEmployee();
   }
-  deleteEmploye(){
-    
+  deleteEmploye(id){
+    this.employeeComp.deleteEmploye(id);
   }
 
 }

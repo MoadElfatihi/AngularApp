@@ -20,7 +20,13 @@
           <mdb-icon far icon="edit"></mdb-icon> 
         </button>
         &nbsp;
-        <button class="btn btn-danger" ng-really-message="Are you sure?" ng-really-click="deleteEmploye()"> 
+        <button class="btn btn-danger"
+         mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="deleteEmploye(emp.id)"
+          (cancel)="cancelClicked = true"> 
           <mdb-icon far icon="trash-alt"></mdb-icon>
         </button>
       </td>

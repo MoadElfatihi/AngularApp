@@ -36,5 +36,15 @@ export class EmployeeService {
     getEmployee(){
       this.listData = this.http.get<Employee[]>(this.url+"/Employees").pipe();
       return this.listData;
-}
+  }
+  deleteEmployee(id){
+    console.log("deleting employe with id "+id);
+    this.http.delete(this.url+"/Employees/"+id).pipe(tap(() => {
+      this._refreshNeeded$.next();
+    }   
+    )).subscribe(
+      (msg) => console.log(msg),
+      (error) =>console.log(error)
+    );
+  }
 }
